@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALORANT</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap' rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(206, 199, 199);
+            box-sizing: border-box;
+        }
+
+        .logo {
+            margin-left: 24px;
+        }
+
+        .logo img {
+            height: 62px;
+            margin-right: 24px;
+        }
+
+        #navbar {
+            background-color: black;
+            color: white;
+            display: flex;
+            padding: 12px;
+            width: 98.4%;
+            top: 0px;
+            /* position: sticky; */
+
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding-top: 20px;
+        }
+
+        ul li {
+            padding: 0 30px;
+        }
+
+        #srch {
+            height: 38px;
+            margin: 0 50px;
+            margin-top: -5px;
+        }
+
+        button img {
+            height: 34px;
+            background-color: black;
+        }
+
+        #playnow {
+            padding: 0px 20px;
+            margin: 0 58px;
+            margin: 0 -16px;
+            margin-top: 7px;
+            border-radius: 10px;
+            position: relative;
+            top: -11px;
+            color: black;
+            background-color: orangered;
+            border: 2px solid black;
+            display: inline-block;
+            outline: 2px solid royalblue;
+            overflow: hidden;
+            transition: color 1s;
+        }
+
+        a:hover {
+            background-color: gray;
+            border-radius: 8px;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        #playnow:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+
+        #playnow:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50px;
+            z-index: -1;
+            width: 150%;
+            height: 100%;
+            background-color: #7effb2;
+            transform: scaleX(0) skew(35deg);
+            transition: transform 1s;
+        }
+
+        #playnow:hover::before {
+            transform: scaleX(1) scaleX(35deg);
+        }
+
+        #section {
+            background-image: url('https://wallpaperaccess.com/full/3952280.jpg');
+            height: 690px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+
+        }
+
+        #section .pra h3 {
+            font-weight: inherit;
+            padding: 20px 174px;
+            color: white;
+        }
+
+        #section .pra h1 {
+            font-size: 100px;
+            color: red;
+            font-family: 'Iceland', cursive;
+            padding-left: 73px;
+        }
+
+        #section button {
+            height: 50px;
+            width: 220px;
+            margin-top: 28px;
+            margin-left: 201px;
+            font-size: 1rem;
+            background-color: rgb(235, 33, 33);
+            color: white;
+        }
+
+        #section button:hover {
+            background-color: black;
+            border: 4px dotted #34495e;
+            cursor: pointer;
+        }
+
+        #news::before {
+            content: "";
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png');
+            height: 600px;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        #news .heading {
+            width: 100%;
+            height: 100%;
+            font-size: 60px;
+        }
+
+        #news .heading {
+            padding-left: 94px;
+            padding-top: 20px;
+            color: red;
+            font-family: 'Lobster Two', cursive;
+        }
+
+        #news .box {
+            display: flex;
+            height: 300px;
+            margin: 0 150px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #news .box img {
+            padding: 0 12px;
+        }
+
+        #news .grid .pra {
+            padding-top: 25px;
+            font-size: 20px;
+        }
+
+        #news img:hover {
+            cursor: pointer;
+        }
+
+        #revelation {
+            background-image: url('https://pbs.twimg.com/media/FqZPBG9XsAAYCX4?format=jpg&name=large');
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            margin-top: 65px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #revelation .container {
+            font-size: 25px;
+            color: white;
+            margin: 100px;
+
+        }
+
+        #revelation .rev {
+            font-size: 60px;
+            padding-top: 42px;
+            font-weight: bolder;
+        }
+
+        #revelation button {
+            padding: 16px 63px;
+            margin-top: 45px;
+            font-size: 16px;
+            background-color: orangered;
+        }
+
+        #revelation button:hover {
+            background-color: black;
+            border: 2px dotted orangered;
+            color: white;
+            cursor: pointer;
+        }
+
+        #valorant {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #valorant img {
+            float: right;
+            height: 22em;
+            width: 40em;
+            position: relative;
+            top: 120px;
+        }
+
+        #valorant .val {
+            font-size: 4rem;
+            position: relative;
+            font-weight: bold;
+            top: 59px;
+            left: 100px;
+        }
+
+        #valorant .pra {
+            position: relative;
+            top: 150px;
+            left: 160px;
+            width: 30em;
+        }
+
+        #valorant .pra h3 {
+            font-size: 2em;
+            color: red;
+            padding: 21px 0;
+        }
+
+        #valorant .pra .p1 {
+            font-size: 17px;
+        }
+
+        #valorant button {
+            border: 0;
+            cursor: pointer;
+            position: relative;
+            top: 195px;
+            left: 12em;
+            outline-style: double;
+
+        }
+
+        #valorant button div {
+
+            background: rgb(15, 25, 35);
+            padding: 1.2rem 5.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #valorant button a {
+            position: relative;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            background: none;
+        }
+
+        button span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 70, 85);
+            transition: 0.4s ease;
+        }
+
+        button:hover span {
+            transform: translateX(-114%) skew(-48deg);
+        }
+
+        #agent {
+            height: 100vh;
+            width: 100vw;
+            background: rgb(255, 70, 85);
+            position: relative;
+            top: 5em;
+            color: white;
+            font-weight: bold;
+        }
+
+        #agent img {
+            width: 50%;
+            object-fit: cover;
+            float: left;
+            position: relative;
+            top: 7em;
+            left: 40px;
+
+        }
+
+        #agent .section4 {
+            font-size: 4em;
+            position: relative;
+            top: 2em;
+            right: -75px;
+            font-weight: bold;
+        }
+
+        #agent .text {
+            position: relative;
+            height: 100px;
+            width: 500px;
+            float: right;
+            right: 97px;
+            top: 10em;
+        }
+
+        #agent .text .h1 {
+            padding: 17px 0;
+            font-size: 23px;
+        }
+
+        #agent .text .msg {
+            font-size: 17px;
+        }
+
+        #agent .text button {
+            border: 0;
+            cursor: pointer;
+            position: relative;
+            top: 3em;
+            left: 1em;
+            overflow: hidden;
+            outline-style: double;
+        }
+
+        #agent .text .div4 {
+            padding: 1.5em 5.5em;
+
+        }
+
+        #agent .text .span4 {
+            background: rgb(15, 25, 35);
+            color: white;
+        }
+
+        #agent .text a {
+            font-size: 1rem;
+            color: black;
+            position: relative;
+            list-style: none;
+            text-decoration: none;
+            font-weight: 900;
+            background: none;
+        }
+
+        footer .footer {
+            height: 35vh;
+            width: 100vw;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer .f1 {
+            font-size: 20px;
+            position: relative;
+            top: 40px;
+            padding-left: 0 10px;
+
+        }
+
+        .footer .span2 {
+            font-size: 20px;
+            position: relative;
+            top: 40px;
+            padding: 0 38px
+        }
+
+        .contact {
+            height: 40vh;
+            width: 100vw;
+            background-color: black;
+        }
+
+        .contact ul {
+            display: flex;
+            justify-content: center;
+            height: 40px;
+        }
+
+        .contact ul li {
+            font-size: 35px;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .contact ul .icon:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        .end ul li {
+            font-size: 15px;
+            border-radius: 8px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .end ul li:hover {
+            /* background-color: grey; */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<br>
+<nav id="navbar">
+    <div class="logo">
+        <div class="searchbox">
+            <img src="https://seeklogo.com/images/V/valorant-logo-FAB2CA0E55-seeklogo.com.png" alt="">
+        </div>
+    </div>
+    <ul>
+        <li class="li" haref="#"><a>GAME INFO</a></li>
+        <li class="li" haref="#"><a>MEDIA</a></li>
+        <li class="li" haref="#"><a>NEWS</a></li>
+        <li class="li" haref="#"><a>LEADERBORDS</a></li>
+        <li class="li" haref="#"><a>SUPPORT</a></li>
+        <li class="li" haref="#"><a>OUR SOCIALS</a></li>
+        <li class="li" haref="#"><a>MORE</a></li>
+        <button id="srch" onclick="search();">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1yUgDtsdyxePQ1uZamjYGO7pH-2Q9TI2xsQ&usqp=CAU"></button>
+        <button id="playnow">PLAY NOW</button>
+    </ul>
+</nav>
+<div id="section">
+    <!-- <video autoplay loop muted play-inline>
+          <source src="Downloads/piyu.mp4" type="video/mp4">
+        </video> -->
+    <div class="pra">
+        <h3>Lorem ipsum dolor sit amet. </h3>
+        <h1>VALORANT</h1>
+        <button>PLAY FREE</button>
+    </div>
+</div>
+<div id="news">
+    <div class="heading">LATEST<br>NEWS</div>
+    <div class="box">
+        <div class="grid"><img
+                src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt4dc1f8623b972fdd/6410eec9a7d98e0267ed404a/vct-thefearless-ep4-thumbnail-1920x1080_TEXTLESS.jpg?auto=webp&disable=upscale&width=369">
+            <p class="pra">
+                3/17/23<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis animi est quae?</p>
+        </div>
+        <div class="grid"><img
+                src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blte24ff75f47135d13/6410f48bba95fe6a2554c474/031523_VCT23_BestOf_Lockin_Banner.jpg?auto=webp&disable=upscale&width=364"
+                alt="">
+            <p class="pra">3/15/23<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis animi est
+                quae?</p>
+        </div>
+        <div class="grid"><img
+                src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltf746966842c4283b/640bc7bf325d0044fe5fae0d/Val_Banner_PatchNotes_6_05_16x9.jpg?auto=webp&disable=upscale&width=364"
+                alt="">
+            <p class="pra">3/14/23<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis animi est
+                quae?</p>
+        </div>
+    </div>
+</div>
+<div id="revelation">
+    <div class="container">Episode_06//act II // yr 3
+        <p class="rev">REVELATION</p>
+        <button>ACT II OVERVIEW</button>
+    </div>
+</div></br></br></br></br></br>
+<hr>
+<div id="valorant">
+    <div class="val">WE ARE VALORANT</div>
+    <img src="https://c4.wallpaperflare.com/wallpaper/363/13/252/valorant-killjoy-valorant-digital-art-artwork-digital-hd-wallpaper-preview.jpg"
+        alt="">
+    <div class="pra">
+        <h3>DEFY THE LIMITS</h3>
+        <div class="p1">Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and
+            defend your side using sharp gunplay and tactical abilities. And, with one life per-round, you'll need to
+            think faster than your opponent if you want to survive. Take on foes across Competitive and Unranked modes
+            as well as Deathmatch and Spike Rush.</div>
+    </div>
+    <button>
+        <div>
+            <span></span>
+            <a href="#">LEARN THE GAME</a>
+        </div>
+    </button>
+
+</div>
+<div id="agent">
+    <img src="https://i.redd.it/zyipc46j76r41.gif" alt="">
+    <div class="section4">
+        YOUR AGENTS
+    </div>
+    <div class="text">
+        <div class="h1">CREATIVITY IS YOUR GREATEST WEAPON.</div>
+        <div class="msg"> More than guns and bullets, you’ll choose an Agent armed with adaptive, swift, and lethal
+            abilities that create
+            opportunities to let your gunplay shine. No two Agents play alike, just as no two highlight reels will look
+            the
+            same.
+        </div>
+        <button class="btn4">
+            <div class="div4">
+                <span class="span4"></span>
+                <a href="#">VIEW ALL AGENTS</a>
+        </button>
+    </div>
+</div>
+</div>
+<footer>
+    <div class="footer">
+        <span class="f1">DOWNLOAD GAME CIENT</span>
+        <span class="span2">DOWLOAD RIOT MOBILE COMPANIES NAME</span>
+    </div>
+
+    <div class="contact">
+        <ul>
+            <li class="icon" href="#"><i class='bx bxl-twitter'></i></li>
+            <li class="icon" href="#"><i class='bx bxl-whatsapp'></i></li>
+            <li class="icon" href="#"><i class='bx bxl-youtube'></i></li>
+            <li class="icon" href="#"><i class='bx bxl-facebook'></i></li>
+            <li class="icon" href="#"><i class='bx bxl-instagram'></i></li>
+        </ul>
+        <div class="end">
+            <ul>
+                <li>PRIVCAY NOTICE</li>
+                <li>TERAMS OF SERVICES</li>
+                <li>COMPANY INFORMATION</li>
+                <li>COOKIE PERFERNCE</li>
+            </ul>
+        </div>
+        <div class="img">
+            <ul>
+                <li><img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt45fdb1ce76c77293/5e7a5d8ccd562e2d656ccc57/EU_-_16_black.jpg?&height=100&disable=upscale"></li>
+                <li><img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt65b392ad6fcc1870/5e7d3ccfd84c6d2d6707a600/EU_-_descriptor_violence.png?&height=100&disable=upscale"></li>
+                <li><img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blta4cd2560c7208614/5e7d3cf671abc60ae32d3960/EU_-_descriptor_in-game-purchase.png?&height=100&disable=upscale"></li>
+                <li><img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/bltff21ad2608691057/5e7a5c251cab8108eff538f1/Germany_-_16_(small).png?&height=100&disable=upscale"></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
